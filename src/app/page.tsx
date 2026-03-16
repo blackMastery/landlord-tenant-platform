@@ -29,6 +29,12 @@ const roleCards = [
       "Assigned work orders, progress tracking, and completion notes.",
     href: "/vendor",
   },
+  {
+    title: "Browse Listings",
+    description:
+      "Explore available rental units across all properties. No account needed.",
+    href: "/listings",
+  },
 ];
 
 export default function Home() {

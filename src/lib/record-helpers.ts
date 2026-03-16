@@ -1,4 +1,6 @@
 import {
+  applications,
+  listings,
   maintenanceTickets,
   messagePreview,
   messageThreads,
@@ -36,3 +38,9 @@ export const findVendorJob = (id: string) =>
 
 export const findVendorNote = (id: string) =>
   vendorNotes.find((note) => note.id === id);
+
+export const findListing = (id: string) =>
+  listings.find((listing) => listing.id === id);
+
+export const findApplication = (id: string) =>
+  applications.find((application) => application.id === id);

@@ -8,6 +8,7 @@ const sections = [
   { label: "Overview", href: "/owner" },
   { label: "Reports", href: "/owner/reports" },
   { label: "Maintenance", href: "/owner/maintenance" },
+  { label: "Applications", href: "/owner/applications" },
 ];
 
 export function OwnerShell({
@@ -22,8 +23,18 @@ export function OwnerShell({
     active: section.label === activeSection,
   }));
 
+  const mobileNavLinks = sections.map((section) => ({
+    ...section,
+    active: section.label === activeSection,
+  }));
+
   return (
-    <RoleShell activeRole="Owner" title="Owner Insights" subtitle="Owner Portal">
+    <RoleShell
+      activeRole="Owner"
+      title="Owner Insights"
+      subtitle="Owner Portal"
+      mobileNavLinks={mobileNavLinks}
+    >
       <div className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
         {sections.map((section) => (
           <Button

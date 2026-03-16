@@ -486,3 +486,136 @@ export const heroMetrics = [
     detail: "Maintenance SLA",
   },
 ];
+
+// ─── Public Listings ─────────────────────────────────────────────────────────
+
+export type Listing = {
+  id: string;
+  unit: string;
+  property: string;
+  location: string;
+  rent: number;
+  status: string;
+  availability: string;
+  bedrooms: number;
+  bathrooms: number;
+  sqft: number;
+  description: string;
+  amenities: string[];
+};
+
+export const listings: Listing[] = [
+  {
+    id: "vac-harbor-112",
+    unit: "H-112",
+    property: "Harborline Flats",
+    location: "San Diego, CA",
+    rent: 2450,
+    status: "Published",
+    availability: "Available Now",
+    bedrooms: 1,
+    bathrooms: 1,
+    sqft: 740,
+    description:
+      "Bright corner unit on the first floor of Harborline Flats. Features an open-plan kitchen, in-unit washer/dryer hookups, and a private patio. Walking distance to the marina and downtown San Diego.",
+    amenities: ["In-unit W/D hookup", "Private patio", "On-site parking", "Pet friendly", "Smart lock entry"],
+  },
+  {
+    id: "vac-eden-410",
+    unit: "E-410",
+    property: "Eden Court",
+    location: "Austin, TX",
+    rent: 2280,
+    status: "Published",
+    availability: "Available Apr 12",
+    bedrooms: 2,
+    bathrooms: 1,
+    sqft: 920,
+    description:
+      "Renovated two-bedroom on the fourth floor with updated stainless appliances and refinished hardwoods. Eden Court is centrally located near Zilker Park with a renovated lobby and smart lock rollout in progress.",
+    amenities: ["Stainless appliances", "Hardwood floors", "Gym access", "Rooftop lounge", "Bike storage"],
+  },
+  {
+    id: "vac-stillwater-204",
+    unit: "S-204",
+    property: "Stillwater Lofts",
+    location: "Denver, CO",
+    rent: 2550,
+    status: "Published",
+    availability: "Available May 01",
+    bedrooms: 2,
+    bathrooms: 2,
+    sqft: 1100,
+    description:
+      "Spacious loft-style two-bed, two-bath unit with exposed concrete ceilings and floor-to-ceiling windows. Stillwater Lofts sits in the heart of RiNo with easy light-rail access and walkable restaurants.",
+    amenities: ["Loft ceilings", "Floor-to-ceiling windows", "Two full baths", "Concierge", "EV charging", "Dog run"],
+  },
+];
+
+// ─── Rental Applications ──────────────────────────────────────────────────────
+
+export type ApplicationStatus = "Submitted" | "Under Review" | "Approved" | "Rejected";
+
+export type Application = {
+  id: string;
+  listingId: string;
+  unit: string;
+  property: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  moveInDate: string;
+  monthlyIncome: number;
+  employer: string;
+  notes: string;
+  status: ApplicationStatus;
+  submittedAt: string;
+};
+
+export const applications: Application[] = [
+  {
+    id: "app-001",
+    listingId: "vac-eden-410",
+    unit: "E-410",
+    property: "Eden Court",
+    fullName: "Marcus Webb",
+    email: "marcus.webb@email.com",
+    phone: "512-555-0182",
+    moveInDate: "2025-04-15",
+    monthlyIncome: 8500,
+    employer: "Dell Technologies",
+    notes: "Looking for a quiet unit. Have one small dog.",
+    status: "Submitted",
+    submittedAt: "2025-03-14",
+  },
+  {
+    id: "app-002",
+    listingId: "vac-eden-410",
+    unit: "E-410",
+    property: "Eden Court",
+    fullName: "Priya Nair",
+    email: "priya.nair@email.com",
+    phone: "512-555-0273",
+    moveInDate: "2025-04-12",
+    monthlyIncome: 9200,
+    employer: "Indeed",
+    notes: "",
+    status: "Under Review",
+    submittedAt: "2025-03-13",
+  },
+  {
+    id: "app-003",
+    listingId: "vac-harbor-112",
+    unit: "H-112",
+    property: "Harborline Flats",
+    fullName: "Jordan Lee",
+    email: "jordan.lee@email.com",
+    phone: "619-555-0341",
+    moveInDate: "2025-03-28",
+    monthlyIncome: 7800,
+    employer: "Freelance Designer",
+    notes: "Remote worker, very quiet lifestyle. No pets.",
+    status: "Submitted",
+    submittedAt: "2025-03-15",
+  },
+];
