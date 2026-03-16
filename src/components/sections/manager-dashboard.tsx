@@ -78,14 +78,15 @@ export function ManagerDashboard({
     responseTime: string;
   }>;
   vacancies: Array<{
+    id: string;
     unit: string;
     property: string;
     rent: number;
     status: string;
     availability: string;
   }>;
-  messageThreads: Array<{ title: string; participants: string; updated: string }>;
-  messagePreview: Array<{ sender: string; body: string; time: string }>;
+  messageThreads: Array<{ id: string; title: string; participants: string; updated: string }>;
+  messagePreview: Array<{ id: string; sender: string; body: string; time: string }>;
 }) {
   return (
     <div className="space-y-8">
