@@ -22,7 +22,7 @@ export default function OwnerReportsPage() {
             Profit summaries, income statements, and occupancy performance.
           </p>
         </div>
-        <Input placeholder="Search reports" className="w-64" />
+        <Input placeholder="Search reports" className="w-full sm:w-64" />
         <OwnerPortalCard metrics={ownerMetrics} profitSummary={profitSummary} />
         <Card className="bg-white/90">
           <CardHeader>

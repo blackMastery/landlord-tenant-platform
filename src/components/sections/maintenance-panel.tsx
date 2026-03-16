@@ -37,7 +37,28 @@ export function MaintenancePanel({
         <CardDescription>Pending and in-progress requests.</CardDescription>
       </CardHeader>
       <CardContent className="p-0">
-        <Table>
+        {/* Mobile card view */}
+        <div className="sm:hidden divide-y">
+          {tickets.map((ticket) => (
+            <div key={`${ticket.id}-m`} className="flex flex-col gap-1.5 p-3 text-sm">
+              <div className="flex items-center justify-between">
+                <span className="font-medium">{ticket.id.toUpperCase()} · {ticket.unit}</span>
+                <Badge className={getStatusClass(ticket.status)}>{ticket.status}</Badge>
+              </div>
+              <div className="text-muted-foreground">{ticket.issue}</div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-muted-foreground">{ticket.priority} · {ticket.vendor}</span>
+                <Button size="sm" variant="outline" asChild>
+                  <Link href={`/manager/maintenance/${ticket.id}`}>View</Link>
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop table */}
+        <div className="hidden sm:block w-full overflow-x-auto">
+          <Table>
           <TableHeader>
             <TableRow>
               <TableHead>Ticket</TableHead>
@@ -72,7 +93,8 @@ export function MaintenancePanel({
               </TableRow>
             ))}
           </TableBody>
-        </Table>
+          </Table>
+        </div>
       </CardContent>
     </Card>
   );

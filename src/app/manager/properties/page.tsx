@@ -23,7 +23,7 @@ export default function PropertiesPage() {
           description="Manage properties and drill into units, tenants, payments, and maintenance."
           actions={
             <>
-              <Input placeholder="Search property" className="w-56" />
+              <Input placeholder="Search property" className="w-full sm:w-56" />
               <SectionActions primary="New Property" secondary="Bulk Import" />
             </>
           }

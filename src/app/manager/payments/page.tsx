@@ -22,7 +22,7 @@ export default function PaymentsPage() {
           description="Centralized rent tracking across tenants."
           actions={
             <>
-              <Input placeholder="Search tenant" className="w-56" />
+              <Input placeholder="Search tenant" className="w-full sm:w-56" />
               <SectionActions primary="Record Payment" secondary="Send Reminders" />
             </>
           }

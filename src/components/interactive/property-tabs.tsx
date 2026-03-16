@@ -113,7 +113,7 @@ export function PropertyTabs({
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap gap-2">
+      <div className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
         {properties.map((property) => (
           <Button
             key={property.id}
@@ -134,7 +134,8 @@ export function PropertyTabs({
         </TabsList>
 
         <TabsContent value="units" className="space-y-2">
-          <Table>
+          <div className="w-full overflow-x-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Unit</TableHead>
@@ -157,11 +158,13 @@ export function PropertyTabs({
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
         </TabsContent>
 
         <TabsContent value="tenants">
-          <Table>
+          <div className="w-full overflow-x-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Tenant</TableHead>
@@ -184,11 +187,13 @@ export function PropertyTabs({
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
         </TabsContent>
 
         <TabsContent value="payments">
-          <Table>
+          <div className="w-full overflow-x-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Tenant</TableHead>
@@ -211,11 +216,13 @@ export function PropertyTabs({
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
         </TabsContent>
 
         <TabsContent value="maintenance">
-          <Table>
+          <div className="w-full overflow-x-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Ticket</TableHead>
@@ -240,7 +247,8 @@ export function PropertyTabs({
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
         </TabsContent>
       </Tabs>
     </div>

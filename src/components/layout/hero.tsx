@@ -25,11 +25,13 @@ export function HeroSection({
       <Card className="border-none bg-white/90 shadow-xl">
         <CardHeader className="space-y-4">
           <Badge className="w-fit bg-black text-white">MVP Focus</Badge>
-          <CardTitle className="text-3xl leading-tight">{title}</CardTitle>
+          <CardTitle className="text-2xl leading-tight sm:text-3xl">
+            {title}
+          </CardTitle>
           <CardDescription className="text-base">{description}</CardDescription>
-          <div className="flex flex-wrap gap-3">
-            <Button className="rounded-full">Create Property</Button>
-            <Button variant="outline" className="rounded-full">
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button className="w-full rounded-full sm:w-auto">Create Property</Button>
+            <Button variant="outline" className="w-full rounded-full sm:w-auto">
               Invite Owner
             </Button>
           </div>

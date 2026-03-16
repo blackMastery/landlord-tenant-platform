@@ -27,7 +27,27 @@ export function VacancyTable({
   return (
     <Card className="bg-white/90">
       <CardContent className="p-0">
-        <Table>
+        {/* Mobile card view */}
+        <div className="sm:hidden divide-y">
+          {vacancies.map((vacancy) => (
+            <div key={`${vacancy.property}-${vacancy.unit}-m`} className="flex flex-col gap-1.5 p-3 text-sm">
+              <div className="flex items-center justify-between">
+                <span className="font-medium">{vacancy.unit} · {vacancy.property}</span>
+                <Badge className={getStatusClass(vacancy.status)}>{vacancy.status}</Badge>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-muted-foreground">${vacancy.rent.toLocaleString()}/mo · {vacancy.availability}</span>
+                <Button size="sm" variant="outline" asChild>
+                  <Link href={`/manager/vacancies/${vacancy.id}`}>View</Link>
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop table */}
+        <div className="hidden sm:block w-full overflow-x-auto">
+          <Table>
           <TableHeader>
             <TableRow>
               <TableHead>Unit</TableHead>
@@ -60,7 +80,8 @@ export function VacancyTable({
               </TableRow>
             ))}
           </TableBody>
-        </Table>
+          </Table>
+        </div>
       </CardContent>
     </Card>
   );

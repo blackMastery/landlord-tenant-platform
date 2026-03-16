@@ -46,11 +46,37 @@ export function UnitTable({ units }: { units: UnitRow[] }) {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Search unit, tenant, or property"
-          className="w-64"
+          className="w-full sm:w-64"
         />
         <Button variant="outline">Filter</Button>
       </div>
-      <Table>
+      {/* Mobile card view */}
+      <div className="sm:hidden space-y-2">
+        {filteredUnits.map((unit) => (
+          <div key={`${unit.property}-${unit.unit}-m`} className="flex flex-col gap-1.5 rounded-lg border bg-white p-3 text-sm">
+            <div className="flex items-center justify-between">
+              <span className="font-medium">{unit.unit} · {unit.property}</span>
+              <Badge className={getStatusClass(unit.status)}>{unit.status}</Badge>
+            </div>
+            <div className="text-muted-foreground">
+              {unit.tenant} · ${unit.rent.toLocaleString()}/mo
+            </div>
+            <div className="text-muted-foreground text-xs">
+              Lease: {unit.leaseStart} – {unit.leaseEnd}
+            </div>
+            <div className="flex gap-2 pt-1">
+              <Button size="sm" variant="outline" asChild className="flex-1">
+                <Link href={`/manager/units/${unit.id}`}>View</Link>
+              </Button>
+              <Button size="sm" variant="ghost" className="flex-1">Message</Button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden sm:block w-full overflow-x-auto">
+        <Table>
         <TableHeader>
           <TableRow>
             <TableHead>Unit</TableHead>
@@ -90,7 +116,8 @@ export function UnitTable({ units }: { units: UnitRow[] }) {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+        </Table>
+      </div>
     </div>
   );
 }

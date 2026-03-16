@@ -10,13 +10,13 @@ const roles = [
 
 export function RoleNav({ active }: { active: string }) {
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="flex w-full items-center gap-2 overflow-x-auto sm:w-auto sm:flex-wrap sm:overflow-visible">
       {roles.map((role) => (
         <Button
           key={role.label}
           asChild
           variant={active === role.label ? "default" : "outline"}
-          className="rounded-full"
+          className="shrink-0 rounded-full"
         >
           <Link href={role.href}>{role.label}</Link>
         </Button>

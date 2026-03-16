@@ -21,7 +21,7 @@ export default function TenantMessagesPage() {
             Conversation history with your property manager.
           </p>
         </div>
-        <Input placeholder="Search messages" className="w-64" />
+        <Input placeholder="Search messages" className="w-full sm:w-64" />
         <MessageHub
           threads={messageThreads}
           messages={messagePreview}

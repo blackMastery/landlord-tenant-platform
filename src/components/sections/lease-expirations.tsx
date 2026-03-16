@@ -32,7 +32,8 @@ export function LeaseExpirations({
         </Button>
       </CardHeader>
       <CardContent>
-        <Table>
+        <div className="w-full overflow-x-auto">
+          <Table>
           <TableHeader>
             <TableRow>
               <TableHead>Tenant</TableHead>
@@ -51,7 +52,8 @@ export function LeaseExpirations({
               </TableRow>
             ))}
           </TableBody>
-        </Table>
+          </Table>
+        </div>
       </CardContent>
     </Card>
   );

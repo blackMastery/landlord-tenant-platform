@@ -22,7 +22,7 @@ export default function MaintenancePage() {
           description="Ticket routing, vendor assignment, and status tracking."
           actions={
             <>
-              <Input placeholder="Search tickets" className="w-56" />
+              <Input placeholder="Search tickets" className="w-full sm:w-56" />
               <SectionActions primary="New Work Order" secondary="Assign Vendor" />
             </>
           }

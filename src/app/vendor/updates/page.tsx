@@ -21,7 +21,7 @@ export default function VendorUpdatesPage() {
             Share status updates and upload completion notes.
           </p>
         </div>
-        <Input placeholder="Search updates" className="w-64" />
+        <Input placeholder="Search updates" className="w-full sm:w-64" />
         <Card className="bg-white/90">
           <CardHeader>
             <CardTitle>Latest Notes</CardTitle>

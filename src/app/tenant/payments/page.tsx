@@ -22,7 +22,7 @@ export default function TenantPaymentsPage() {
             View rent status and payment history.
           </p>
         </div>
-        <Input placeholder="Search payments" className="w-64" />
+        <Input placeholder="Search payments" className="w-full sm:w-64" />
         <Card className="bg-white/90">
           <CardHeader>
             <CardTitle>Current Balance</CardTitle>

@@ -14,7 +14,7 @@ export default function VendorJobsPage() {
           { label: "Jobs" },
         ]}
       />
-      <Input placeholder="Search jobs" className="w-64" />
+      <Input placeholder="Search jobs" className="w-full sm:w-64" />
       <VendorPortalCard jobs={vendorJobs} notes={vendorNotes} />
     </VendorShell>
   );

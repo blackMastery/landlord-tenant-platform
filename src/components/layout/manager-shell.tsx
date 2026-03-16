@@ -14,6 +14,14 @@ const sections = [
   { label: "Messages", href: "/manager/messages" },
 ];
 
+const mobileNavSections = [
+  { label: "Overview", href: "/manager" },
+  { label: "Properties", href: "/manager/properties" },
+  { label: "Payments", href: "/manager/payments" },
+  { label: "Maintenance", href: "/manager/maintenance" },
+  { label: "Messages", href: "/manager/messages" },
+];
+
 export function ManagerShell({
   activeSection,
   children,
@@ -26,20 +34,26 @@ export function ManagerShell({
     active: section.label === activeSection,
   }));
 
+  const mobileNavLinks = mobileNavSections.map((section) => ({
+    ...section,
+    active: section.label === activeSection,
+  }));
+
   return (
     <RoleShell
       activeRole="Property Manager"
       title="Portfolio Operations Hub"
       subtitle="Property Manager"
+      mobileNavLinks={mobileNavLinks}
     >
-      <div className="flex flex-wrap gap-2">
+      <div className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
         {sections.map((section) => (
           <Button
             key={section.label}
             asChild
             size="sm"
             variant={section.label === activeSection ? "default" : "outline"}
-            className="rounded-full"
+            className="shrink-0 rounded-full"
           >
             <Link href={section.href}>{section.label}</Link>
           </Button>

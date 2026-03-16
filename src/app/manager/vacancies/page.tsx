@@ -21,7 +21,7 @@ export default function VacanciesPage() {
           description="Listings, viewings, and application pipeline."
           actions={
             <>
-              <Input placeholder="Search vacancy" className="w-56" />
+              <Input placeholder="Search vacancy" className="w-full sm:w-56" />
               <SectionActions primary="Publish Listing" secondary="Schedule Viewing" />
             </>
           }

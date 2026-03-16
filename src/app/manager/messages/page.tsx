@@ -21,7 +21,7 @@ export default function MessagesPage() {
           description="Active conversations and alerts."
           actions={
             <>
-              <Input placeholder="Search messages" className="w-56" />
+              <Input placeholder="Search messages" className="w-full sm:w-56" />
               <SectionActions primary="Compose" secondary="New Group" />
             </>
           }

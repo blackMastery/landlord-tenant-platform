@@ -34,7 +34,8 @@ export function VendorPortalCard({
           <CardDescription>Active work orders for your team.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Table>
+          <div className="w-full overflow-x-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Job</TableHead>
@@ -65,7 +66,8 @@ export function VendorPortalCard({
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
           <div className="flex gap-2">
             <Button variant="outline">Accept Job</Button>
             <Button>Update Progress</Button>

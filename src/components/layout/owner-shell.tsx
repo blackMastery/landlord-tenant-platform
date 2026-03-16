@@ -24,14 +24,14 @@ export function OwnerShell({
 
   return (
     <RoleShell activeRole="Owner" title="Owner Insights" subtitle="Owner Portal">
-      <div className="flex flex-wrap gap-2">
+      <div className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
         {sections.map((section) => (
           <Button
             key={section.label}
             asChild
             size="sm"
             variant={section.label === activeSection ? "default" : "outline"}
-            className="rounded-full"
+            className="shrink-0 rounded-full"
           >
             <Link href={section.href}>{section.label}</Link>
           </Button>

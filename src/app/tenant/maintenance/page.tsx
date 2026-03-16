@@ -21,7 +21,7 @@ export default function TenantMaintenancePage() {
             Submit new requests and track progress.
           </p>
         </div>
-        <Input placeholder="Search requests" className="w-64" />
+        <Input placeholder="Search requests" className="w-full sm:w-64" />
         <TenantPortalCard tenant={tenantSnapshot} />
       </section>
     </TenantShell>

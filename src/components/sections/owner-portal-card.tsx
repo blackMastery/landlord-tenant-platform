@@ -39,7 +39,8 @@ export function OwnerPortalCard({
         </div>
         <div>
           <p className="text-sm font-semibold">Profit Summary</p>
-          <Table>
+          <div className="w-full overflow-x-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Property</TableHead>
@@ -58,7 +59,8 @@ export function OwnerPortalCard({
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
         </div>
         <div className="flex gap-2">
           <Button variant="outline">Download Statement</Button>

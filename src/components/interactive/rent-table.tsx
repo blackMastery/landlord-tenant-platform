@@ -49,7 +49,28 @@ export function RentTable({ rentRoll }: { rentRoll: RentRow[] }) {
           </Button>
         ))}
       </div>
-      <Table>
+      {/* Mobile card view */}
+      <div className="sm:hidden space-y-2">
+        {filteredRows.map((row) => (
+          <div key={`${row.tenant}-${row.unit}-m`} className="flex flex-col gap-1.5 rounded-lg border bg-white p-3 text-sm">
+            <div className="flex items-center justify-between">
+              <span className="font-medium">{row.tenant}</span>
+              <Badge className={getStatusClass(row.status)}>{row.status}</Badge>
+            </div>
+            <div className="text-muted-foreground">{row.unit} · {row.property}</div>
+            <div className="flex items-center justify-between">
+              <span>${row.amount.toLocaleString()} · Due {row.dueDate}</span>
+              <Button size="sm" variant="outline" asChild>
+                <Link href={`/manager/payments/${row.id}`}>View</Link>
+              </Button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden sm:block w-full overflow-x-auto">
+        <Table>
         <TableHeader>
           <TableRow>
             <TableHead>Tenant</TableHead>
@@ -67,6 +88,7 @@ export function RentTable({ rentRoll }: { rentRoll: RentRow[] }) {
               <TableCell className="font-medium">{row.tenant}</TableCell>
               <TableCell>{row.unit}</TableCell>
               <TableCell>{row.property}</TableCell>
+              <TableCell>${row.amount.toLocaleString()}</TableCell>
               <TableCell>
                 <Badge className={getStatusClass(row.status)}>
                   {row.status}
@@ -81,7 +103,8 @@ export function RentTable({ rentRoll }: { rentRoll: RentRow[] }) {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+        </Table>
+      </div>
     </div>
   );
 }

@@ -21,7 +21,7 @@ export default function OwnerMaintenancePage() {
             Monitor open tickets, costs, and SLA compliance.
           </p>
         </div>
-        <Input placeholder="Search tickets" className="w-64" />
+        <Input placeholder="Search tickets" className="w-full sm:w-64" />
         <MaintenancePanel tickets={maintenanceTickets} />
       </section>
     </OwnerShell>
