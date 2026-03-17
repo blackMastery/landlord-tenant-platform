@@ -23,9 +23,9 @@ export function TenantDashboard({
           View rent status, submit maintenance, and reach your manager.
         </p>
       </div>
-      <TenantPortalCard tenant={tenant} />
+      <div id="tenant-tour-portal-card"><TenantPortalCard tenant={tenant} /></div>
       <div className="grid gap-4 lg:grid-cols-2">
-        <Card className="bg-white/90">
+        <Card id="tenant-tour-payment-history" className="bg-white/90">
           <CardHeader>
             <CardTitle>Payment History</CardTitle>
             <CardDescription>Last three payments.</CardDescription>
@@ -40,7 +40,7 @@ export function TenantDashboard({
             )}
           </CardContent>
         </Card>
-        <Card className="bg-white/90">
+        <Card id="tenant-tour-messages" className="bg-white/90">
           <CardHeader>
             <CardTitle>Messages</CardTitle>
             <CardDescription>Recent conversation with your manager.</CardDescription>

@@ -25,7 +25,7 @@ export function TenantShell({
 
   return (
     <RoleShell activeRole="Tenant" title="Resident Hub" subtitle="Tenant Portal">
-      <div className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
+      <div id="tenant-tour-nav" className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
         {sections.map((section) => (
           <Button
             key={section.label}
