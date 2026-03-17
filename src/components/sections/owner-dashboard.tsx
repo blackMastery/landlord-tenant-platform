@@ -24,9 +24,9 @@ export function OwnerDashboard({
           Monitor property performance without daily operational tasks.
         </p>
       </div>
-      <DashboardWidgets metrics={widgets} />
-      <OwnerPortalCard metrics={metrics} profitSummary={profitSummary} />
-      <Card className="bg-white/90">
+      <div id="owner-tour-metrics"><DashboardWidgets metrics={widgets} /></div>
+      <div id="owner-tour-portal"><OwnerPortalCard metrics={metrics} profitSummary={profitSummary} /></div>
+      <Card id="owner-tour-capital" className="bg-white/90">
         <CardHeader>
           <CardTitle>Capital Planning</CardTitle>
           <CardDescription>Upcoming investments and projections.</CardDescription>

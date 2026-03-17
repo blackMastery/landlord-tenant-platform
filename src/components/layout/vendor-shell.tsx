@@ -29,7 +29,7 @@ export function VendorShell({
       title="Vendor Operations"
       subtitle="Maintenance Vendor"
     >
-      <div className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
+      <div id="vendor-tour-nav" className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
         {sections.map((section) => (
           <Button
             key={section.label}

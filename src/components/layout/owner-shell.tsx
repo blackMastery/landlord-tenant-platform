@@ -35,7 +35,7 @@ export function OwnerShell({
       subtitle="Owner Portal"
       mobileNavLinks={mobileNavLinks}
     >
-      <div className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
+      <div id="owner-tour-nav" className="flex w-full items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible">
         {sections.map((section) => (
           <Button
             key={section.label}

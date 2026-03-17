@@ -28,7 +28,7 @@ export function VendorPortalCard({
 }) {
   return (
     <div className="grid gap-6 lg:grid-cols-2">
-      <Card className="bg-white/90">
+      <Card id="vendor-tour-jobs" className="bg-white/90">
         <CardHeader>
           <CardTitle>Assigned Jobs</CardTitle>
           <CardDescription>Active work orders for your team.</CardDescription>
@@ -75,7 +75,7 @@ export function VendorPortalCard({
         </CardContent>
       </Card>
 
-      <Card className="bg-white/90">
+      <Card id="vendor-tour-notes" className="bg-white/90">
         <CardHeader>
           <CardTitle>Vendor Notes</CardTitle>
           <CardDescription>Latest updates from contractors.</CardDescription>

@@ -24,7 +24,7 @@ export function VendorDashboard({
         </p>
       </div>
       <VendorPortalCard jobs={jobs} notes={notes} />
-      <Card className="bg-white/90">
+      <Card id="vendor-tour-sla" className="bg-white/90">
         <CardHeader>
           <CardTitle>Service Level Targets</CardTitle>
           <CardDescription>Response time commitments.</CardDescription>
