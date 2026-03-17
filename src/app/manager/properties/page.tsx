@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { maintenanceTickets, properties, rentRoll, units } from "@/lib/mock-data";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { Input } from "@/components/ui/input";
+import { PropertiesTour } from "@/components/interactive/properties-tour";
 
 export default function PropertiesPage() {
   return (
@@ -17,7 +18,7 @@ export default function PropertiesPage() {
           { label: "Properties" },
         ]}
       />
-      <section className="space-y-6">
+      <section id="tour-prop-header" className="space-y-6">
         <SectionHeader
           title="Property Management"
           description="Manage properties and drill into units, tenants, payments, and maintenance."
@@ -25,11 +26,12 @@ export default function PropertiesPage() {
             <>
               <Input placeholder="Search property" className="w-full sm:w-56" />
               <SectionActions primary="New Property" secondary="Bulk Import" />
+              <PropertiesTour />
             </>
           }
         />
-        <PropertyCards properties={properties} />
-        <Card className="bg-white/90">
+        <div id="tour-prop-cards"><PropertyCards properties={properties} /></div>
+        <Card id="tour-prop-tabs" className="bg-white/90">
           <CardHeader>
             <CardTitle>Property Detail Tabs</CardTitle>
             <CardDescription>

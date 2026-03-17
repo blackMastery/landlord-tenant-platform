@@ -15,17 +15,21 @@ import {
 import { ManagerShell } from "@/components/layout/manager-shell";
 import { ManagerDashboard } from "@/components/sections/manager-dashboard";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
+import { ManagerDashboardTour } from "@/components/interactive/manager-dashboard-tour";
 
 export default function ManagerPage() {
   return (
     <ManagerShell activeSection="Overview">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Manager", href: "/manager" },
-          { label: "Overview" },
-        ]}
-      />
+      <div className="flex items-center justify-between gap-4 flex-wrap">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Manager", href: "/manager" },
+            { label: "Overview" },
+          ]}
+        />
+        <ManagerDashboardTour />
+      </div>
       <ManagerDashboard
         heroMetrics={heroMetrics}
         managerMetrics={managerMetrics}

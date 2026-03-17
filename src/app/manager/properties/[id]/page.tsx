@@ -11,6 +11,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { findProperty } from "@/lib/record-helpers";
+import { PropertyDetailTour } from "@/components/interactive/property-detail-tour";
 
 export default async function PropertyDetailPage({
   params,
@@ -27,16 +28,19 @@ export default async function PropertyDetailPage({
 
   return (
     <ManagerShell activeSection="Properties">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Manager", href: "/manager" },
-          { label: "Properties", href: "/manager/properties" },
-          { label: property.name },
-        ]}
-      />
+      <div className="flex items-center justify-between gap-4 flex-wrap">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Manager", href: "/manager" },
+            { label: "Properties", href: "/manager/properties" },
+            { label: property.name },
+          ]}
+        />
+        <PropertyDetailTour />
+      </div>
       <section className="space-y-6">
-        <Card className="bg-white/90">
+        <Card id="tour-detail-info" className="bg-white/90">
           <CardHeader>
             <CardTitle>{property.name}</CardTitle>
             <CardDescription>{property.location}</CardDescription>
@@ -58,7 +62,7 @@ export default async function PropertyDetailPage({
               <p className="text-xs text-muted-foreground">Occupancy</p>
               <p className="text-lg font-semibold">{occupancy}%</p>
             </div>
-            <div className="md:col-span-2">
+            <div id="tour-detail-progress" className="md:col-span-2">
               <Progress value={occupancy} />
             </div>
             <div className="md:col-span-2">
@@ -67,7 +71,7 @@ export default async function PropertyDetailPage({
             </div>
           </CardContent>
         </Card>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div id="tour-detail-links" className="grid gap-4 md:grid-cols-3">
           {["Units", "Tenants", "Payments"].map((label) => (
             <Card key={label} className="bg-white/90">
               <CardHeader>

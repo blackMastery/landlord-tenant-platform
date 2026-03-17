@@ -90,13 +90,15 @@ export function ManagerDashboard({
 }) {
   return (
     <div className="space-y-8">
+      <section id="tour-hero">
       <HeroSection
         title="Centralize property management, rent tracking, maintenance, and tenant communication in one place."
         description="Manage multi-property portfolios with real-time occupancy, cash flow, and maintenance health. Built for property managers and owners who need clarity without complexity."
         metrics={heroMetrics}
       />
+      </section>
 
-      <section className="space-y-6">
+      <section id="tour-kpis" className="space-y-6">
         <SectionHeader
           title="Property Manager Dashboard"
           description="Portfolio KPIs and active alerts."
@@ -109,7 +111,7 @@ export function ManagerDashboard({
         </div>
       </section>
 
-      <section className="space-y-6">
+      <section id="tour-property-mgmt" className="space-y-6">
         <SectionHeader
           title="Property Management"
           description="Manage properties and drill into units, tenants, payments, and maintenance."
@@ -135,7 +137,7 @@ export function ManagerDashboard({
         </Card>
       </section>
 
-      <section className="space-y-6">
+      <section id="tour-units" className="space-y-6">
         <SectionHeader
           title="Unit Management"
           description="All units with tenant, rent, and lease details."
@@ -147,7 +149,7 @@ export function ManagerDashboard({
         </Card>
       </section>
 
-      <section className="space-y-6">
+      <section id="tour-rent" className="space-y-6">
         <SectionHeader
           title="Rent Management"
           description="Centralized rent tracking across tenants."
@@ -160,7 +162,7 @@ export function ManagerDashboard({
         </Card>
       </section>
 
-      <section className="space-y-6">
+      <section id="tour-maintenance" className="space-y-6">
         <SectionHeader
           title="Maintenance Management"
           description="Ticket routing, vendor assignment, and status tracking."
@@ -172,7 +174,7 @@ export function ManagerDashboard({
         </div>
       </section>
 
-      <section className="space-y-6">
+      <section id="tour-vacancies" className="space-y-6">
         <SectionHeader
           title="Vacancy Management"
           description="Listings, viewings, and application pipeline."
@@ -181,7 +183,7 @@ export function ManagerDashboard({
         <VacancyTable vacancies={vacancies} />
       </section>
 
-      <section className="space-y-6">
+      <section id="tour-messages" className="space-y-6">
         <SectionHeader
           title="Messaging Hub"
           description="Active conversations and alerts."
