@@ -1,9 +1,8 @@
 import { OwnerShell } from "@/components/layout/owner-shell";
-import { OwnerPortalCard } from "@/components/sections/owner-portal-card";
-import { ownerMetrics, profitSummary } from "@/lib/mock-data";
+import { FinancialCharts } from "@/components/sections/financial-charts";
+import { monthlyFinancials } from "@/lib/mock-data";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
-import { Input } from "@/components/ui/input";
 
 export default function OwnerReportsPage() {
   return (
@@ -17,13 +16,14 @@ export default function OwnerReportsPage() {
       />
       <section className="space-y-6">
         <div>
-          <h2 className="text-2xl font-semibold">Owner Reports</h2>
+          <h2 className="text-2xl font-semibold">Financial Reports</h2>
           <p className="text-sm text-muted-foreground">
-            Profit summaries, income statements, and occupancy performance.
+            Revenue, expenses, NOI, and occupancy performance.
           </p>
         </div>
-        <Input placeholder="Search reports" className="w-full sm:w-64" />
-        <OwnerPortalCard metrics={ownerMetrics} profitSummary={profitSummary} />
+
+        <FinancialCharts data={monthlyFinancials} />
+
         <Card className="bg-white/90">
           <CardHeader>
             <CardTitle>Download Center</CardTitle>
@@ -31,15 +31,17 @@ export default function OwnerReportsPage() {
           </CardHeader>
           <CardContent className="grid gap-3 sm:grid-cols-3">
             {[
-              "Monthly income statement",
-              "Maintenance expense ledger",
-              "Occupancy trend report",
-            ].map((label) => (
-              <div key={label} className="rounded-xl border p-3">
-                <p className="text-sm font-semibold">{label}</p>
-                <p className="text-xs text-muted-foreground">
-                  Updated March 12
-                </p>
+              { label: "Monthly income statement", updated: "Updated Mar 12" },
+              { label: "Maintenance expense ledger", updated: "Updated Mar 12" },
+              { label: "Occupancy trend report", updated: "Updated Mar 12" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="rounded-xl border p-3 flex flex-col gap-1 hover:bg-slate-50 cursor-pointer transition-colors"
+              >
+                <p className="text-sm font-semibold">{item.label}</p>
+                <p className="text-xs text-muted-foreground">{item.updated}</p>
+                <p className="text-xs text-blue-600 mt-1">↓ Download PDF</p>
               </div>
             ))}
           </CardContent>

@@ -14,6 +14,9 @@ export const statusClasses: Record<string, string> = {
   "Under Review": "bg-amber-100 text-amber-700",
   Approved: "bg-emerald-100 text-emerald-700",
   Rejected: "bg-rose-100 text-rose-700",
+  Renewed: "bg-emerald-100 text-emerald-700",
+  "Sent Offer": "bg-blue-100 text-blue-700",
+  "Not Renewing": "bg-rose-100 text-rose-700",
 };
 
 export const getStatusClass = (status: string) =>

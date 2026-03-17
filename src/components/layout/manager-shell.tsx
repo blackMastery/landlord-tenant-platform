@@ -11,6 +11,7 @@ const sections = [
   { label: "Payments", href: "/manager/payments" },
   { label: "Maintenance", href: "/manager/maintenance" },
   { label: "Vacancies", href: "/manager/vacancies" },
+  { label: "Leases", href: "/manager/leases" },
   { label: "Messages", href: "/manager/messages" },
 ];
 

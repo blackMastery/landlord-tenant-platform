@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getStatusClass } from "@/lib/status";
 import { findVendorJob } from "@/lib/record-helpers";
+import { VendorJobActions } from "@/components/interactive/vendor-job-actions";
 
 export default async function VendorJobDetailPage({
   params,
@@ -30,20 +31,30 @@ export default async function VendorJobDetailPage({
           <CardHeader>
             <CardTitle>Work Order {job.id.toUpperCase()}</CardTitle>
             <CardDescription>
-              {job.property} - {job.unit} - {job.tenant}
+              {job.property} · {job.unit} · Tenant: {job.tenant}
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4 md:grid-cols-2">
             <div>
               <p className="text-xs text-muted-foreground">Issue</p>
-              <p className="text-sm">{job.issue}</p>
+              <p className="text-sm font-medium mt-0.5">{job.issue}</p>
             </div>
             <div>
               <p className="text-xs text-muted-foreground">Status</p>
-              <Badge className={getStatusClass(job.status)}>{job.status}</Badge>
+              <Badge className={`${getStatusClass(job.status)} mt-0.5`}>{job.status}</Badge>
+            </div>
+            <div>
+              <p className="text-xs text-muted-foreground">Property</p>
+              <p className="text-sm mt-0.5">{job.property}</p>
+            </div>
+            <div>
+              <p className="text-xs text-muted-foreground">Unit</p>
+              <p className="text-sm mt-0.5">{job.unit}</p>
             </div>
           </CardContent>
         </Card>
+
+        <VendorJobActions initialStatus={job.status} />
       </section>
     </VendorShell>
   );

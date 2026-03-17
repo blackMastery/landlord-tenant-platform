@@ -572,6 +572,111 @@ export type Application = {
   submittedAt: string;
 };
 
+// ─── Monthly Financials (for Owner Reports charts) ───────────────────────────
+
+export const monthlyFinancials = [
+  { month: "Sep", income: 172000, expenses: 18500 },
+  { month: "Oct", income: 176800, expenses: 22100 },
+  { month: "Nov", income: 179200, expenses: 19800 },
+  { month: "Dec", income: 181400, expenses: 24300 },
+  { month: "Jan", income: 180900, expenses: 17600 },
+  { month: "Feb", income: 182100, expenses: 15200 },
+  { month: "Mar", income: 184320, expenses: 12480 },
+];
+
+// ─── Tenant Payment History ───────────────────────────────────────────────────
+
+export const tenantPaymentHistory = [
+  { id: "pay-001", month: "Mar 2026", amount: 2150, status: "Paid" as PaymentStatus, date: "2026-03-01", method: "ACH Bank Transfer" },
+  { id: "pay-002", month: "Feb 2026", amount: 2150, status: "Paid" as PaymentStatus, date: "2026-02-01", method: "ACH Bank Transfer" },
+  { id: "pay-003", month: "Jan 2026", amount: 2150, status: "Paid" as PaymentStatus, date: "2026-01-02", method: "ACH Bank Transfer" },
+  { id: "pay-004", month: "Dec 2025", amount: 2150, status: "Paid" as PaymentStatus, date: "2025-12-01", method: "ACH Bank Transfer" },
+  { id: "pay-005", month: "Nov 2025", amount: 2150, status: "Paid" as PaymentStatus, date: "2025-11-01", method: "ACH Bank Transfer" },
+  { id: "pay-006", month: "Oct 2025", amount: 2150, status: "Paid" as PaymentStatus, date: "2025-10-01", method: "Debit Card" },
+];
+
+// ─── Tenant Maintenance Requests ──────────────────────────────────────────────
+
+export type UrgencyLevel = "Low" | "Medium" | "High" | "Emergency";
+
+export const tenantMaintenanceRequests = [
+  {
+    id: "tmr-001",
+    category: "Plumbing",
+    description: "Bathroom sink drains very slowly",
+    urgency: "Low" as UrgencyLevel,
+    status: "Completed" as TicketStatus,
+    submittedAt: "2026-02-10",
+    updatedAt: "2026-02-15",
+  },
+  {
+    id: "tmr-002",
+    category: "HVAC",
+    description: "Thermostat display not responding to input",
+    urgency: "Medium" as UrgencyLevel,
+    status: "In Progress" as TicketStatus,
+    submittedAt: "2026-03-05",
+    updatedAt: "2026-03-10",
+  },
+];
+
+// ─── Lease Renewals ───────────────────────────────────────────────────────────
+
+export type RenewalStatus = "Renewed" | "Pending" | "Not Renewing" | "Sent Offer";
+
+export const leaseRenewals = [
+  {
+    id: "lr-001",
+    tenant: "Imani Clark",
+    unit: "S-204",
+    property: "Stillwater Lofts",
+    leaseEnd: "2026-03-14",
+    renewalStatus: "Not Renewing" as RenewalStatus,
+    daysUntilExpiry: -3,
+    rent: 2550,
+  },
+  {
+    id: "lr-002",
+    tenant: "Rohan Patel",
+    unit: "E-215",
+    property: "Eden Court",
+    leaseEnd: "2026-04-30",
+    renewalStatus: "Sent Offer" as RenewalStatus,
+    daysUntilExpiry: 44,
+    rent: 1980,
+  },
+  {
+    id: "lr-003",
+    tenant: "Nadia Ellis",
+    unit: "E-301",
+    property: "Eden Court",
+    leaseEnd: "2026-05-31",
+    renewalStatus: "Pending" as RenewalStatus,
+    daysUntilExpiry: 75,
+    rent: 2150,
+  },
+  {
+    id: "lr-004",
+    tenant: "Camila Ruiz",
+    unit: "H-409",
+    property: "Harborline Flats",
+    leaseEnd: "2026-07-31",
+    renewalStatus: "Renewed" as RenewalStatus,
+    daysUntilExpiry: 136,
+    rent: 2625,
+  },
+  {
+    id: "lr-005",
+    tenant: "Leo Beckett",
+    unit: "S-507",
+    property: "Stillwater Lofts",
+    leaseEnd: "2026-09-30",
+    renewalStatus: "Pending" as RenewalStatus,
+    daysUntilExpiry: 197,
+    rent: 2890,
+  },
+];
+
 export const applications: Application[] = [
   {
     id: "app-001",

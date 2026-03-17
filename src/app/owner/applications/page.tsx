@@ -1,9 +1,8 @@
 import { OwnerShell } from "@/components/layout/owner-shell";
-import { SectionHeader, SectionActions } from "@/components/layout/section-header";
-import { ApplicationsPanel } from "@/components/sections/applications-panel";
+import { SectionHeader } from "@/components/layout/section-header";
+import { ApplicationKanban } from "@/components/interactive/application-kanban";
 import { applications } from "@/lib/mock-data";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
-import { Input } from "@/components/ui/input";
 
 export default function OwnerApplicationsPage() {
   return (
@@ -18,15 +17,9 @@ export default function OwnerApplicationsPage() {
       <section className="space-y-6">
         <SectionHeader
           title="Rental Applications"
-          description="Review and follow up on submitted applications."
-          actions={
-            <>
-              <Input placeholder="Search applicant" className="w-full sm:w-56" />
-              <SectionActions primary="Export" />
-            </>
-          }
+          description="Review and move applications through the pipeline."
         />
-        <ApplicationsPanel applications={applications} />
+        <ApplicationKanban initialApplications={applications} />
       </section>
     </OwnerShell>
   );

@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 import Link from "next/link";
-import { managerProfile } from "@/lib/mock-data";
+import { managerProfile, notifications } from "@/lib/mock-data";
 import { RoleNav } from "@/components/layout/role-nav";
+import { NotificationBell } from "@/components/interactive/notification-bell";
 
 export function RoleShell({
   activeRole,
@@ -34,7 +35,10 @@ export function RoleShell({
               </p>
             </div>
           </div>
-          <RoleNav active={activeRole} />
+          <div className="flex items-center gap-3">
+            <NotificationBell notifications={notifications} />
+            <RoleNav active={activeRole} />
+          </div>
         </div>
       </header>
 
